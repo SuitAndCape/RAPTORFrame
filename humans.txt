@@ -27,13 +27,11 @@
     GitHub: https://github.com/hermitina
     Location: Southern Bay Area
 
-    Name: Eric Lawrence Dapp
+    Name: Allan Enemark
     Role: Consultant
-    Email: DappEr.ic@gmail.com
-    GitHub: https://github.com/e-dapp
-    Website: https://e-dapp.github.io
-    LinkedIn: https://www.linkedin.com/in/eldapp
-    Bandcamp: https://ferc.bandcamp.com/
+    GitHub: https://github.com/exactlyAllan
+    Website: http://allanenemark.com
+    LinkedIn: https://www.linkedin.com/in/allanenemark
     Location: Southern Bay Area
 
 /*== Info ===================================================================*/
