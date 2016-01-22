@@ -3,7 +3,13 @@
 ////= RAPTORFrame Gulp Tasks
 //===========================================================================//
 
-    /// => ToDo: update for Gulp 4.0 upon release <= ///
+/// RAPTORFrame v1.0.0
+  /// SOURCE: https://github.com/SuitAndCape/RAPTORFrame
+  /// Authored by Ali Esmaili
+  /// Copyright (c) 2015-2016 Ali Esmaili | SuitAndCape
+  /// MIT: https://github.com/SuitAndCape/RAPTORFrame/blob/Info/LICENSE
+
+    /// => ToDo: apply Gulp 4.0 updates when deemed appropriate <= ///
     /// SOURCE: https://github.com/gulpjs/gulp/blob/4.0/docs/API.md
 
 var gulp = require('gulp'),
@@ -12,12 +18,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    uglifyJS = require('gulp-uglify'),
-    runSequence = require('run-sequence');
-
-var dest = gulp.dest,
-    err = console.error,
-    src = gulp.src;
+    uglifyJS = require('gulp-uglify');
 
 var assetsPath = {
       'raptorcss': './assets/stylesheets/raptor.css',
@@ -37,7 +38,7 @@ var assetsPath = {
       'js': './source/js/**/*.js',
     };
     // sourcePath = {
-    //   'scssmanifest': './source/scss/raptor.scss',
+    //   'scssmanifest': './source/scss/raptorframe.scss',
     //   'scss': './source/scss/**/*.scss',
     //   'js': [
     //     './source/js/polyfills/**/*.js',
@@ -54,41 +55,27 @@ var assetsPath = {
 /// Errors are reported in terminal and `watch` isn't broken by them
 /// SOURCE: http://stackoverflow.com/a/23973536
 function handleError(error) {
-  err(error.toString());
+  console.error(error.toString());
   this.emit('end');
 }
 
-//== Style Tasks =============================================================/
+//== Compiler Tasks ==========================================================/
 
-gulp.task('compile-styles', function() {
+gulp.task('raptor-styles', function() {
   return gulp
     .src(sourcePath.scssmanifest)
     .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded'
     }))
-    .pipe(rename('raptor.css'))
     .on('error', handleError)
-    .pipe(dest(assetsPath.stylesheets))
-    .pipe(sourcemaps.write('./'))
-    .pipe(dest(assetsPath.stylesheets));
-});
-
-gulp.task('minify-styles', function() {
-  return gulp
-    .src(assetsPath.raptorcss)
-    .pipe(sourcemaps.init())
-    .pipe(rename({
-      suffix: '.min'
-    }))
+    .pipe(rename('raptor.min.css'))
     .pipe(minifyCSS())
     .pipe(sourcemaps.write('./'))
-    .pipe(dest(assetsPath.stylesheets));
+    .pipe(gulp.dest(assetsPath.stylesheets));
 });
 
-//== Script Tasks ============================================================/
-
-gulp.task('concat-scripts', function() {
+gulp.task('raptor-scripts', function() {
   return gulp
     // .src(sourcePath.js) /// OPTION 2
     .src([
@@ -100,48 +87,26 @@ gulp.task('concat-scripts', function() {
       sourcePath.jsmain,
     ])
     .pipe(sourcemaps.init())
-    .pipe(concat('raptor.js'))
-    .pipe(sourcemaps.write('./'))
-    .pipe(dest(assetsPath.javascripts));
-});
-
-gulp.task('uglify-scripts', function() {
-  return gulp
-    .src(assetsPath.raptorjs)
-    .pipe(sourcemaps.init())
-    .pipe(rename({
-      suffix: '.min'
-    }))
+    .pipe(concat('raptor.min.js'))
     .pipe(uglifyJS())
     .on('error', handleError)
     .pipe(sourcemaps.write('./'))
-    .pipe(dest(assetsPath.javascripts));
+    .pipe(gulp.dest(assetsPath.javascripts));
 });
 
 //== Management Tasks ========================================================/
 
-gulp.task('raptor-style', function() {
-  // gulp.series('compile-styles', 'minify-styles');
-  runSequence('compile-styles', 'minify-styles');
-});
-
-gulp.task('raptor-script', function() {
-  // gulp.series('concat-scripts', 'uglify-scripts'); /// OPTION 1
-  runSequence('concat-scripts', 'uglify-scripts');
-});
-
 gulp.task('watch', function() {
-  gulp.watch(sourcePath.scss, ['raptor-style']);
-  // gulp.watch(sourcePath.js, gulp.series('raptor-script')); /// OPTION 2
-  gulp.watch(sourcePath.js, ['raptor-script']);
+  // gulp.watch(sourcePath.scss, gulp.registry().get('raptor-styles'))
+  gulp.watch(sourcePath.scss, ['raptor-styles']);
+  // gulp.watch(sourcePath.js, gulp.registry().get('raptor-scripts')) /// OPTION 2
+  gulp.watch(sourcePath.js, ['raptor-scripts']);
 });
-
-//== Command Line Tasks ======================================================/
 
 gulp.task('serve', ['watch']);
 
-// gulp.task('build', gulp.parallel('raptor-style', 'raptor-script');
-gulp.task('build', ['raptor-style', 'raptor-script']);
+// gulp.task('build', gulp.parallel('raptor-styles', 'raptor-scripts');
+gulp.task('build', ['raptor-styles', 'raptor-scripts']);
 
 // gulp.task('default', gulp.series('build', 'watch'));
 gulp.task('default', ['build', 'watch']);
