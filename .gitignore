@@ -4,8 +4,6 @@
 ##===========================================================================##
 
 ## How to use .gitignore: https://help.github.com/articles/ignoring-files
-*.css.map
-*.js.map
 *.sassc
 .sass-cache/
 .DS_Store
