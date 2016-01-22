@@ -3,7 +3,7 @@
 RAPTORFrame
 ===============================================================================
 
-**R**apid **A**daptive **P**ractical **T**ricked-**O**ut **R**ocket **Frame**, or RAPTORFrame, is a light and modular framework what assists in rapidly developing modern frontend projects.
+**R**apid **A**daptive **P**ractical **T**ricked-**O**ut **R**ocket **Frame**work, or RAPTORFrame, is a light and modular framework what assists in rapidly developing modern frontend projects.
 The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/SuitAndCape/RAPTORSMACSS), is loosely based on the [SMACSS](https://smacss.com/) architecture pattern.
 
 ## Contents
