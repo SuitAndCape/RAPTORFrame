@@ -1,0 +1,44 @@
+/* humanstxt.org */
+
+/***= Humans Text File
+=============================================================================*/
+
+  The humans responsible & technology colophon
+
+/*== Team ===================================================================*/
+
+  Name: Ali Esmaili
+  Role: Developer & Designer
+  Email: AESM85@gmail.com
+  SuitAndCape GitHub: https://github.com/SuitAndCape
+  Personal GitHub: https://github.com/AESM
+  Website: https://SuitAndCape.github.io/
+  LinkedIn: https://www.linkedin.com/in/SuitAndCape
+  Twitter: https://twitter.com/SuitAndCape
+  Location: Southern Bay Area
+
+/*== Thanks =================================================================*/
+
+  /*===== Support Team =====*/
+    Name: Molly Allison-Baker
+    Role: Consultant
+    Website: http://hermitina.com/
+    LinkedIn: https://www.linkedin.com/in/mallisonbaker
+    GitHub: https://github.com/hermitina
+    Location: Southern Bay Area
+
+    Name: Eric Lawrence Dapp
+    Role: Consultant
+    Email: DappEr.ic@gmail.com
+    GitHub: https://github.com/e-dapp
+    Website: https://e-dapp.github.io
+    LinkedIn: https://www.linkedin.com/in/eldapp
+    Bandcamp: https://ferc.bandcamp.com/
+    Location: Southern Bay Area
+
+/*== Info ===================================================================*/
+
+  Last update: 2016/01/21
+  Languages: JavaScript, CSS3, HTML5
+  Components: Sass (SCSS), Gulp.js, jshint, scss-lint, tidy-html5
+  Development tools: Sublime Text 3, iTerm2, NPM, SublimeLinter, Google Chrome
