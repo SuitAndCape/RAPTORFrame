@@ -74,7 +74,7 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 
 - **Ali Esmaili** _(Developer & Designer)_: [AESM](https://github.com/AESM)
 - **Molly Allison-Baker** _(Consultant)_: [hermitina](https://github.com/hermitina)
-- **Eric Lawrence Dapp** _(Consultant)_: [e-dapp](https://github.com/e-dapp)
+- **Allan Enemark** _(Consultant)_: [exactlyAllan](https://github.com/exactlyAllan)
 
 ## License
 
