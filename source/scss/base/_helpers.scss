@@ -1,0 +1,47 @@
+// _helpers.scss
+
+////= Frequently Used Properties
+//===========================================================================//
+
+/// Center alignment
+.center-align {
+  text-align: center;
+}
+
+/// Lets an element clear its child elements
+/// Often used to combat the zero-height container problem
+/// @link https://css-tricks.com/snippets/css/clear-fix/
+.clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+/// Hide text in the element behind it
+/// @author Scott Kellum
+/// @link http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/// Remove default list styling
+.no-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/// Full-width, centered container
+/// @recommends max-width property
+.tupperware {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: pxem(15px);
+  padding-right: pxem(15px);
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+// _functions.scss
+
+////= Functions
+//===========================================================================//
+
+//== Conversion Functions ====================================================/
+
+/// Convert pixels to rem values
+/// @modifier Ali Esmaili
+/// @link https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function pxrem($px-input) {
+  $px-compared: 16px;
+  @return ($px-input / $px-compared) * 1rem;
+}
+
+/// Convert pixels to em values
+/// @modifier Ali Esmaili
+/// @link https://css-tricks.com/snippets/sass/px-to-em-functions/
+/// @requires $body-font-size
+@function pxem($px-input, $px-compared: $body-font-size) {
+  @if (unitless($px-input)) {
+    $px-input: $px-input * 1px;
+  }
+
+  @if (unitless($px-compared)) {
+    $px-compared: $px-compared * 1px;
+  }
+
+  @return ($px-input / $px-compared) * 1em;
+}

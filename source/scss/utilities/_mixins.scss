@@ -1,0 +1,45 @@
+// _mixins.scss
+
+////= Mixins
+//===========================================================================//
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @modifier Hugo Giraudel
+/// @modifier Ali Esmaili
+/// @link https://twitter.com/csswizardry/status/478938530342006784
+/// @param {Bool} $self [false] - Decides whether to include the current
+//selector or not
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Responsive manager
+/// @modifier Ali Esmaili
+/// @link http://sass-guidelin.es/#breakpoint-manager
+/// @param {String} $key - Breakpoint
+/// @requires _config => $breakpoints
+@mixin respond-to($key) {
+  $value: map-get($breakpoints, $key);
+
+  @if not $value {
+    @error 'No value found for `#{$key}`. Please make sure it is defined in `$breakpoints` map.';
+  }
+
+  @media #{if(type-of($value) == 'string', unquote($value), inspect($value))} {
+    @content;
+  }
+}

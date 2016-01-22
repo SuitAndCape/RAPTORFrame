@@ -1,0 +1,69 @@
+// raptorframe.scss
+
+/// RAPTORFrame v1.0.0
+  /// SOURCE: https://github.com/SuitAndCape/RAPTORFrame
+  /// Authored by Ali Esmaili
+  /// Copyright (c) 2015-2016 Ali Esmaili | SuitAndCape
+  /// MIT: https://github.com/SuitAndCape/RAPTORFrame/blob/Info/LICENSE
+
+////= RAPTORFrame Master Manifest
+//===========================================================================//
+
+@charset 'UTF-8';
+
+//== Vendor Dependencies =====================================================/
+
+/// Import xxxxx
+// @import 'vendors/xxxxx';
+
+//== Universal Tools =========================================================/
+
+/// Import global configuration
+@import 'utilities/config';
+
+/// Import functions
+@import 'utilities/functions';
+
+/// Import mixins
+@import 'utilities/mixins';
+
+//== Project Groundwork ======================================================/
+
+/// Import additional fonts and icons
+@import 'base/glyphs';
+
+/// Import core setup
+@import 'base/core';
+
+/// Import typographic setup
+@import 'base/typography';
+
+/// Import frequently used properties
+@import 'base/helpers';
+
+//== Project Structure =======================================================/
+
+/// Import header/banner styling
+@import 'layout/header-banner';
+
+/// Import footer/root styling
+@import 'layout/footer-root';
+
+/// Import nav/navigation styling
+@import 'layout/nav-navigation';
+
+/// Import main/principal styling
+@import 'layout/main-principal';
+
+/// Import aside/sidebar styling
+@import 'layout/aside-sidebar';
+
+//== Project Components ======================================================/
+
+/// Import image module
+@import 'modules/images';
+
+//== Page Specific Styles ====================================================/
+
+/// Import home page styling
+@import 'pages/home-page';

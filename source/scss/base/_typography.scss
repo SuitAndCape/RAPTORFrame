@@ -1,0 +1,69 @@
+// _typography.scss
+
+////= Typographic Setup
+//===========================================================================//
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: $primary-color;
+  font: ($body-font-size / 1) $body-font;
+}
+
+a,
+i {
+  &:hover {
+    color: $quinary-color;
+  }
+}
+
+a {
+  color: $quaternary-color;
+  text-decoration: none;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote,
+dfn {
+  font-style: italic;
+}
+
+code {
+  font-family: $code-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $main-heading-font;
+}
+
+h4,
+h5,
+h6 {
+  font-family: $sub-heading-font;
+}
+
+sub,
+sup {
+  font-size: $sm-font-size;
+  line-height: 0;
+}

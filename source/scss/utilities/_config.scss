@@ -1,0 +1,82 @@
+// _config.scss
+
+////= Global Configuration
+//===========================================================================//
+
+//== Asset Path Assignments ==================================================/
+
+$path-glyph: '../glyphs';
+$path-img: '../images';
+$path-js: '../javascripts';
+$path-font: $path-glyph + '/fonts';
+$path-icon: $path-glyph + '/icons';
+
+//== Glyph Stack Assignments =================================================/
+
+/// Font stacks
+$font-stack-open-sans: ('Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif);
+$font-stack-futura: (Futura, 'Trebuchet MS', Arial, Helvetica, sans-serif);
+$font-stack-garamond: (Garamond, Constantia, 'Times New Roman', Times, serif);
+$font-stack-consolas: ('Consolas', 'Courier New', 'Bitstream Vera Sans Mono', 'Monaco', monospace);
+
+//== Descriptive Color Assignments ===========================================/
+
+/// Standard colors
+$black: #000000;
+$red: #FF0000;
+$blue: #0000FF;
+
+/// Variant and custom colors
+$gallery: #EFEFEF;
+$cod-gray: #0B0B0B;
+$java: #1FC2C2;
+$pacific-blue: #009DC4;
+
+//== Reusable Variables ======================================================/
+
+/// Font stack usage
+$body-font: $font-stack-open-sans;
+$code-font: $font-stack-consolas;
+$main-heading-font: $font-stack-garamond;
+$sub-heading-font: $font-stack-futura;
+
+/// Color usage
+$primary-color: $cod-gray;
+$secondary-color: $red;
+$tertiary-color: $blue;
+$quaternary-color: $pacific-blue;
+$quinary-color: $java;
+$primary-bg-color: $gallery;
+$shadow-color: rgba($black, 1);
+
+/// Body font-size
+/// Used with @pxem function
+$body-font-size: 18px;
+
+/// Font size usage
+$lg-font-size: 110%;
+$sm-font-size: 70%;
+
+/// Border radii
+$primary-radius: 4px;
+$round-radius: 50%;
+
+/// Durations
+$primary-duration: 0.3s;
+$secondary-duration: 1s;
+
+//== Configuration Maps ======================================================/
+
+/// Breakpoints map
+/// Used with @respond-to mixin
+$breakpoints: (
+  'xxxs': (min-width: 320px),
+  'xxs': (min-width: 480px),
+  'xs': (min-width: 640px),
+  'sm': (min-width: 768px),
+  'md': (min-width: 992px),
+  'lg': (min-width: 1024px),
+  'xl': (min-width: 1200px),
+  'xxl': (min-width: 1440px),
+  'xxxl': (min-width: 1920px),
+);
