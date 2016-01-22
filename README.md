@@ -32,8 +32,8 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 
 ### Installation
 1. Create a new project directory
-2. Place the `assets/` and `source/` directories, and the `gulpfile.js` and `package.json` files from the `RAPTORFrame/` directory, into the root directory of your project (_do not_ transfer the `.git/` directory)
-3. Optionally, repeat the previous step with the other files found in the `RAPTORFrame/` directory (`index.html`, `.gitignore`, `.editorconfig`, `rapticon-16x16.png`, etc.)
+2. Place the `assets/` and `source/` directories, and the `gulpfile.js` and `package.json` files from the `RAPTORFrame/` directory, into the root directory of your project
+3. Optionally, repeat the previous step with the other files found in the `RAPTORFrame/` directory (`index.html`, `.gitignore`, `.editorconfig`, `rapticon-16x16.png`, etc.) [_do not_ transfer the `.git/` directory]
 4. Within the project root directory, run `npm install` to setup the development environment
 5. Link your base file (eg. `index.html`) to the `raptor.min.css` or `raptor.css` stylesheet, and to the `raptor.min.js` or `raptor.js` JavaScript file, found in the `assets/` directory
 
