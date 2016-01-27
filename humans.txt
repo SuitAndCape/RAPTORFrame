@@ -1,11 +1,11 @@
-/* humanstxt.org */
+# humanstxt.org
 
-/***= Humans Text File
-=============================================================================*/
+####= RAPTORFrame Humans Text File
+##===========================================================================##
 
-  The humans responsible & technology colophon
+## The humans responsible & technology colophon
 
-/*== Team ===================================================================*/
+##== Team ====================================================================#
 
   Name: NAME
   Role: ROLE
@@ -13,28 +13,33 @@
   GitHub: https://github.com/USERNAME
   Website: https://WEBSITE/
   LinkedIn: https://www.linkedin.com/in/USERNAME
-  Dribbble: https://dribbble.com/USERNAME
   Twitter: https://twitter.com/USERNAME
-  Instagram: https://instagram.com/USERNAME
   Location: AREA
 
-/*== Thanks =================================================================*/
+##== Thanks ==================================================================#
 
-  /*===== NAME Team =====*/
+  ##===== TITLE Team =====##
     Name: NAME
     Role: ROLE
     Email: EMAIL
     GitHub: https://github.com/USERNAME
     Website: https://WEBSITE/
     LinkedIn: https://www.linkedin.com/in/USERNAME
-    Dribbble: https://dribbble.com/USERNAME
     Twitter: https://twitter.com/USERNAME
-    Instagram: https://instagram.com/USERNAME
     Location: AREA
 
-/*== Info ===================================================================*/
+    Name: NAME
+    Role: ROLE
+    Email: EMAIL
+    GitHub: https://github.com/USERNAME
+    Website: https://WEBSITE/
+    LinkedIn: https://www.linkedin.com/in/USERNAME
+    Twitter: https://twitter.com/USERNAME
+    Location: AREA
+
+##== Info ====================================================================#
 
   Last update: 20YY/MM/DD
-  Languages: LANGUAGES
-  Components: TECHNOLOGIES
-  Development tools: APPLICATIONS
+  Languages: JavaScript, CSS3, HTML5
+  Components: Sass (SCSS), Gulp.js, RAPTORFrame, RAPTORSMACSS
+  Development tools: NPM
