@@ -66,7 +66,6 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 - Create `@font-face` mixin for glyphs (_maybe..._)
 - Write thorough documentation or instructional `.md` file(s) explaining how to use everything
 - Include logo, when developed
-
 - Definitely create the following...
   + Base files
     * New `rapticon-16x16.ico` and new `rapticon-16x16.png`
