@@ -34,7 +34,6 @@ var rootPath = './',
       'images': './frame/images',
       'glyphs': './frame/glyphs',
       'frame': './frame',
-      'root': './',
     },
     sourcePath = {
       'scssmanifest': './source/scss/raptorframe.scss',
@@ -153,7 +152,7 @@ gulp.task('raptor-base', function () {
     .src(sourcePath.base)
     .pipe(gulp.dest(function(file) {
       file.path = file.base + path.basename(file.path);
-      return framePath.root;
+      return rootPath;
       // return framePath.frame; /// Use this if you make `frame/` the root
     }));
 });
