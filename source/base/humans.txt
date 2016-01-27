@@ -1,0 +1,45 @@
+# humanstxt.org
+
+####= RAPTORFrame Humans Text File
+##===========================================================================##
+
+## The humans responsible & technology colophon
+
+##== Team ====================================================================#
+
+  Name: NAME
+  Role: ROLE
+  Email: EMAIL
+  GitHub: https://github.com/USERNAME
+  Website: https://WEBSITE/
+  LinkedIn: https://www.linkedin.com/in/USERNAME
+  Twitter: https://twitter.com/USERNAME
+  Location: AREA
+
+##== Thanks ==================================================================#
+
+  ##===== TITLE Team =====##
+    Name: NAME
+    Role: ROLE
+    Email: EMAIL
+    GitHub: https://github.com/USERNAME
+    Website: https://WEBSITE/
+    LinkedIn: https://www.linkedin.com/in/USERNAME
+    Twitter: https://twitter.com/USERNAME
+    Location: AREA
+
+    Name: NAME
+    Role: ROLE
+    Email: EMAIL
+    GitHub: https://github.com/USERNAME
+    Website: https://WEBSITE/
+    LinkedIn: https://www.linkedin.com/in/USERNAME
+    Twitter: https://twitter.com/USERNAME
+    Location: AREA
+
+##== Info ====================================================================#
+
+  Last update: 20YY/MM/DD
+  Languages: JavaScript, CSS3, HTML5
+  Components: Sass (SCSS), Gulp.js, RAPTORFrame, RAPTORSMACSS
+  Development tools: NPM

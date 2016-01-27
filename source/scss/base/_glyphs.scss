@@ -8,12 +8,12 @@
 /// Loads FONT-NAME font
 // @font-face {
 //   font-family: 'FONT-NAME';
-//   src: url($path-font + '/FONT-FOLDER/fontname.eot');
-//   src: url($path-font + '/FONT-FOLDER/fontname.eot?#iefix') format('embedded-opentype'),
-//        url($path-font + '/FONT-FOLDER/fontname.woff2') format('woff2'),
-//        url($path-font + '/FONT-FOLDER/fontname.woff') format('woff'),
-//        url($path-font + '/FONT-FOLDER/fontname.ttf') format('truetype'),
-//        url($path-font + '/FONT-FOLDER/fontname.svg#FONT-NAME') format('svg');
+//   src: url($path-glyph + '/fontname.eot');
+//   src: url($path-glyph + '/fontname.eot?#iefix') format('embedded-opentype'),
+//        url($path-glyph + '/fontname.woff2') format('woff2'),
+//        url($path-glyph + '/fontname.woff') format('woff'),
+//        url($path-glyph + '/fontname.ttf') format('truetype'),
+//        url($path-glyph + '/fontname.svg#FONT-NAME') format('svg');
 //   font-weight: normal;
 //   font-style: normal;
 // }
@@ -23,12 +23,12 @@
 /// Loads ICON-NAME font
 // @font-face {
 //   font-family: 'ICON-NAME';
-//   src: url($path-icon + '/ICON-FOLDER/fontname.eot');
-//   src: url($path-icon + '/ICON-FOLDER/fontname.eot?#iefix') format('embedded-opentype'),
-//        url($path-icon + '/ICON-FOLDER/fontname.woff2') format('woff2'),
-//        url($path-icon + '/ICON-FOLDER/fontname.woff') format('woff'),
-//        url($path-icon + '/ICON-FOLDER/fontname.ttf') format('truetype'),
-//        url($path-icon + '/ICON-FOLDER/fontname.svg#ICON-NAME') format('svg');
+//   src: url($path-glyph + '/fontname.eot');
+//   src: url($path-glyph + '/fontname.eot?#iefix') format('embedded-opentype'),
+//        url($path-glyph + '/fontname.woff2') format('woff2'),
+//        url($path-glyph + '/fontname.woff') format('woff'),
+//        url($path-glyph + '/fontname.ttf') format('truetype'),
+//        url($path-glyph + '/fontname.svg#ICON-NAME') format('svg');
 //   font-weight: normal;
 //   font-style: normal;
 // }
