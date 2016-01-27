@@ -60,12 +60,23 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 - Create `@font-face` mixin for glyphs (_maybe..._)
 - Write thorough documentation or instructional `.md` file(s) explaining how to use everything
 - Include logo, when developed
-- Update `rapticon-16x16.png` and `rapticon-16x16.ico` favicons, when developed
-- Create `apple-touch-icon` and `og:image`
-- Create optional status files
-  + `404.html`
-  + `422.html`
-  + `500.html`
+- Definitely create the following...
+  + Base files
+    * New `rapticon-16x16.ico` and new `rapticon-16x16.png`
+    * `apple-touch-icon.jpg` or `apple-touch-icon.png`
+  + Images
+    * Logo – `.png` and/or `svg`
+    * `og:image` – `.jpg` or `.png`
+- Consider creating the following...
+  + Base files
+    * `404.html`
+    * `422.html`
+    * `500.html`
+    * `.jshintignore`
+    * `.eslintignore`
+  + Lib directories
+    * CSS libraries, non-compiled
+    * JavaScript libraries, non-compiled
 
 -------------------------------------------------------------------------------
 
