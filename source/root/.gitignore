@@ -1,0 +1,12 @@
+# .gitignore
+
+####= RAPTORFrame .gitignore File List
+##===========================================================================##
+
+## How to use .gitignore: https://help.github.com/articles/ignoring-files
+*.sassc
+.sass-cache/
+.DS_Store
+.DS_Store?
+node_modules
+npm-debug.log
