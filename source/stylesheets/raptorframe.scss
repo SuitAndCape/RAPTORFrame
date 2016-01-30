@@ -1,6 +1,6 @@
 // raptorframe.scss
 
-/// RAPTORFrame v1.0.0
+/// RAPTORFrame v1.0.1
   /// SOURCE: https://github.com/SuitAndCape/RAPTORFrame
   /// Authored by Ali Esmaili
   /// Copyright (c) 2015-2016 Ali Esmaili | SuitAndCape
@@ -13,8 +13,8 @@
 
 //== Vendor Dependencies =====================================================/
 
-/// Import xxxxx
-// @import 'vendors/xxxxx';
+/// Import all vendor partials and files
+@import 'vendors/**/*.scss';
 
 //== Universal Tools =========================================================/
 
@@ -43,27 +43,15 @@
 
 //== Project Structure =======================================================/
 
-/// Import header/banner styling
-@import 'layout/header-banner';
-
-/// Import footer/root styling
-@import 'layout/footer-root';
-
-/// Import nav/navigation styling
-@import 'layout/nav-navigation';
-
-/// Import main/principal styling
-@import 'layout/main-principal';
-
-/// Import aside/sidebar styling
-@import 'layout/aside-sidebar';
+/// Import all layout partials and files
+@import 'layout/**/*.scss';
 
 //== Project Components ======================================================/
 
-/// Import image module
-@import 'modules/images';
+/// Import all module partials and files
+@import 'modules/**/*.scss';
 
 //== Page Specific Styles ====================================================/
 
-/// Import home page styling
-@import 'pages/home-page';
+/// Import all page partials and files
+@import 'pages/**/*.scss';

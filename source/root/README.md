@@ -19,70 +19,98 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 ## Usage
 
 ### Requirements
-- Sass Option 1
-  + [Ruby](https://www.ruby-lang.org/en/) 1.8.7+ 
-  + [Sass](https://github.com/sass/sass) 3.4.0+
-- Sass Option 2
-  + A non-Ruby Sass alternative
-- Necessities
-  + [Node](https://github.com/nodejs/node) 5.0.0+
-  + [NPM](https://docs.npmjs.com/getting-started/what-is-npm) 3.0.0+
-  + [Gulp](https://github.com/gulpjs/gulp) 3.9.0+
-  + [Gulp-CLI](https://github.com/gulpjs/gulp-cli) 1.1.0+
+- [Node](https://github.com/nodejs/node) 5.0.0+
+- [NPM](https://docs.npmjs.com/getting-started/what-is-npm) 3.0.0+
+- [Gulp](https://github.com/gulpjs/gulp) 3.9.0+
+- [Gulp-CLI](https://github.com/gulpjs/gulp-cli) 1.1.0+
 
 ### Installation
 1. Create a new project directory
 2. Place the `assets/` and `source/` directories, and the `gulpfile.js` and `package.json` files from the `RAPTORFrame/` directory, into the root directory of your project
 3. Optionally, repeat the previous step with the other files found in the `RAPTORFrame/` directory (`index.html`, `.gitignore`, `.editorconfig`, `rapticon-16x16.png`, etc.) [_do not_ transfer the `.git/` directory]
 4. Within the project root directory, run `npm install` to setup the development environment
-5. Link your base file (eg. `index.html`) to the `raptor.min.css` stylesheet, and to the `raptor.min.js` JavaScript file, found in the `assets/` directory
+5. Link your base file (eg. `index.html`) to the `raptor.css` stylesheet, and to the `raptor.js` JavaScript file, found in the `assets/` directory
 
 ``` html
 <!-- STYLESHEET EXAMPLE -->
-<link rel="stylesheet" type="text/css" href="assets/stylesheets/raptor.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/stylesheets/raptor.css" />
 ```
 
 ``` html
 <!-- JAVASCRIPT EXAMPLE -->
-<script type="text/javascript" src="assets/javascripts/raptor.min.js"></script>
+<script type="text/javascript" src="assets/javascripts/raptor.js"></script>
 ```
 
 ### Commands
 |          Command          |            Task            |
 |---------------------------|----------------------------|
 |      `npm run raptor`     | `build` the entire _frame_, `watch` all of the _source_ files |
-| `npm run raptor -- init` | **+** `transfer` the _base_ files (`README.md`, `humans.txt`, `robots.txt`, `LICENSE`, `.editorconfig`, and `.gitconfig`) to the _root_ |
 | `npm run raptor -- build` | `build` the entire _frame_ |
 | `npm run raptor -- watch` | `watch` all of the _source_ files |
+| `npm run raptor -- init` | `build` the _root_ files (`index.html`, `README.md`, `humans.txt`, `robots.txt`, `LICENSE`, `.editorconfig`, and `.gitconfig`) to the _root_ |
 | `npm run raptor -- smash` | `build` the _stylesheets_ and _JavaScripts_ |
-| `npm run raptor -- hiero` | `build` additional _glyphs_ (_fonts_ and _icons_) |
-| `npm run raptor -- shift` | `build` the _static_ content (_favicons_, _images_, _audio_, and _video_) |
+| `npm run raptor -- glyph` | `build` additional _glyphs_ (_fonts_ and _icons_) |
+| `npm run raptor -- audvi` | `build` the _images_ and the _media_ (_favicons_, _images_, _audio_, and _video_) |
 |     `npm run launch`      | Starts a local server and opens the base file in a browser |
-
-**+** **NOTE**: The `npm run raptor -- init` command should only be run once if you plan on modifying the base files from the root directory, _OR_ every time you modify the base files if you plan on modifying them in the `source/base/` directory
 
 ## ToDos
 
-- Create `@font-face` mixin for glyphs (_maybe..._)
-- Write thorough documentation or instructional `.md` file(s) explaining how to use everything
-- Include logo, when developed
-- Definitely create the following...
-  + Base files
+- Write thorough documentation, including the following...
+  + `source/root/` directory
+    * Transfer made to `frame/`
+    * Edit the hidden files
+    * Subfolders will not transfer
+    * Instructional `README.md` file
+  + `source/glyphs/` directory
+    * Transfer made to `frame/glyphs/`
+    * Only `eot`, `svg`, `ttf`, `woff`, and `woff2` files will transfer
+    * Subfolders will not transfer
+  + `source/images/` directory
+    * Transfer made to `frame/images/`
+    * Only `gif`, `ico`, `jpeg`, `jpg`, `png`, `svg`, `tif`, and `tiff` files will transfer
+    * Subfolders will transfer, for modularity
+  + `source/javascripts/` directory
+    * All concatenated and uglified to `frame/javascripts/raptor.js`
+    * How and where to add JavaScript files
+    * What each file and subfolder does
+    * Subfolders will not transfer
+  + `source/media/` directory
+    * Transfer made to `frame/media/`
+    * Only `aac`, `avi`, `m4a`, `mid`, `mov`, `mp3`, `mp4`, `ogg`, `ogv`, `swf`, `vtt`, `wav`, `webm`, `wma`, and `wmv` files will transfer
+    * Subfolders will transfer, for modularity
+  + `source/stylesheets/` directory
+    * All compiled and minified to `frame/stylesheets/raptor.css`
+    * How and where to add SCSS files
+    * What each file and subfolder does
+    * Subfolders will not transfer
+  + `source/views/` directory
+    * Transfer made to `frame/`
+    * Subfolders will transfer, for modularity
+
+- Add the following...
+  + Linters 
+    * `scss-lint`
+    * `csslint`
+    * `jshint` or `eslint`
+    * Some for views
+    * Some for markup languages (_maybe..._)
+- Create the following...
+  + Root files
     * New `rapticon-16x16.ico` and new `rapticon-16x16.png`
     * `apple-touch-icon.jpg` or `apple-touch-icon.png`
-  + Images
-    * Logo – `.png` and/or `svg`
-    * `og:image` – `.jpg` or `.png`
-- Consider creating the following...
-  + Base files
-    * `404.html`
-    * `422.html`
-    * `500.html`
+    * `404.html` (_maybe..._)
+    * `422.html` (_maybe..._)
+    * `500.html` (_maybe..._)
     * `.jshintignore`
     * `.eslintignore`
+  + SCSS files
+    * A `@font-face` mixin for glyphs (_maybe..._)
+  + Images
+    * RAPTORFrame logo – `.png` and/or `svg`
+    * RAPTORFrame `og:image` – `.jpg` or `.png`
   + Lib directories
-    * CSS libraries, non-compiled
-    * JavaScript libraries, non-compiled
+    * CSS libraries, non-compiled (_maybe..._)
+    * JavaScript libraries, non-compiled (_maybe..._)
 
 -------------------------------------------------------------------------------
 
