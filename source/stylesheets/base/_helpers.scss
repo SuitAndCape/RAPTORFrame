@@ -29,6 +29,13 @@
   white-space: nowrap;
 }
 
+/// Universal hovering color
+.hover-color {
+  &:hover {
+    color: $quinary-color;
+  }
+}
+
 /// Remove default list styling
 .no-bullets {
   list-style: none;

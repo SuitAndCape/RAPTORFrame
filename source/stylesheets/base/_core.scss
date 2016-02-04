@@ -3,89 +3,60 @@
 ////= Core Setup
 //===========================================================================//
 
+/// *1* – Setup box model of border-box on the root element
+/// *2* – Make all elements from the DOM inherit from the root box-sizing
+
 html {
-  box-sizing: border-box;
+  // box-sizing: border-box;     /// *1* ///
+  font-family: sans-serif;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smooting: antialiased;
+  -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+// *,     /// *2* ///
+// *::before,     /// *2* ///
+// *::after {     /// *2* ///
+//   box-sizing: inherit;     /// *2* ///
+// }     /// *2* ///
 
 body {
   background: $primary-bg-color;
+  color: $primary-color;
+  font: ($body-font-size / 1) $body-font;
   margin: 0;
 }
 
 a,
 button {
   color: inherit;
+  -webkit-transition: $primary-duration;
   transition: $primary-duration;
 }
 
 a {
   background-color: transparent;
-  display: inline-block;
-  position: relative;
+  color: $quaternary-color;
+  text-decoration: none;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-li,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
+b,
+strong {
+  font-weight: bold;
 }
 
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-button,
-input {
-
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
+blockquote,
+dfn {
+  font-style: italic;
 }
 
 button {
   background: none;
   border: 0;
   cursor: pointer;
+  font: inherit;
   -webkit-font-smoothing: inherit;
   letter-spacing: inherit;
   overflow: visible;
@@ -110,38 +81,42 @@ figure {
   padding: 0;
 }
 
-iframe {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+}
+
+iframe,
+img {
   border: 0;
 }
 
 img {
-  border: 0;
   height: auto;
   max-width: 100%;
 }
 
-pre,
-textarea {
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
+li {
+  display: block;
 }
 
 sub,
 sup {
+  font-size: $sm-font-size;
+  line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
 
-sup {
-  top: pxem(-8px);
-}
-
 sub {
-  bottom: pxem(-4px);
+  bottom: -0.225em;
 }
 
-[hidden],
-template {
-  display: none;
+sup {
+  top: -0.45;
 }

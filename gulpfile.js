@@ -31,7 +31,6 @@ var framePath = {
       'frame': './frame',
     },
     sourcePath = {
-      'scssmanifest': './source/stylesheets/raptorframe.scss',
       'scss': './source/stylesheets/**/*.scss',
       'jsview': './source/javascripts/views/**/*.js',
       'jsvend': './source/javascripts/vendors/**/*.js',
@@ -50,7 +49,7 @@ var framePath = {
     //   ],
       'img': './source/images/**/*.{gif,ico,jpeg,jpg,png,svg,tif,tiff}',
       'fi': './source/glyphs/**/*.{eot,svg,ttf,woff,woff2}',
-      'base': [
+      'root': [
         './source/root/**/*',
         './source/root/**/.editorconfig',
         './source/root/**/.gitignore',
@@ -73,13 +72,13 @@ function handleError(error) {
 
 gulp.task('raptor-styles', function() {
   return gulp
-    .src(sourcePath.scssmanifest)
+    .src(sourcePath.scss)
     .pipe(sourcemaps.init())
-    .pipe(sassGlob())
-    .pipe(sass())
-    .on('error', handleError)
-    .pipe(rename('raptor.css'))
-    .pipe(minifyCSS())
+      .pipe(sassGlob())
+      .pipe(sass())
+      .on('error', handleError)
+      .pipe(rename('raptor.css'))
+      .pipe(minifyCSS())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(framePath.stylesheets));
 });
@@ -96,9 +95,9 @@ gulp.task('raptor-scripts', function() {
       sourcePath.jsmain,
     ])
     .pipe(sourcemaps.init())
-    .pipe(concat('raptor.js'))
-    .pipe(uglifyJS())
-    .on('error', handleError)
+      .pipe(concat('raptor.js'))
+      .pipe(uglifyJS())
+      .on('error', handleError)
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(framePath.javascripts));
 });
@@ -124,13 +123,10 @@ gulp.task('raptor-media', function() {
     .pipe(gulp.dest(framePath.media));
 });
 
-gulp.task('raptor-base', function () {
+gulp.task('raptor-root', function () {
   return gulp
-    .src(sourcePath.base)
-    .pipe(gulp.dest(function(file) {
-      file.path = file.base + path.basename(file.path);
-      return framePath.frame;
-    }));
+    .src(sourcePath.root)
+    .pipe(gulp.dest(framePath.frame));
 });
 
 //== Management Tasks ========================================================/
@@ -143,7 +139,7 @@ gulp.task('glyph', ['raptor-glyphs']);
 // gulp.task('smash', gulp.parallel('raptor-styles', 'raptor-scripts');
 gulp.task('smash', ['raptor-styles', 'raptor-scripts']);
 
-gulp.task('init', ['raptor-base']);
+gulp.task('init', ['raptor-root']);
 
 gulp.task('watch', function() {
   // gulp.watch(sourcePath.scss, gulp.registry().get('raptor-styles'))
@@ -156,12 +152,12 @@ gulp.task('watch', function() {
   gulp.watch(sourcePath.img, ['raptor-images']);
   // gulp.watch(sourcePath.av, gulp.registry().get('raptor-media'))
   gulp.watch(sourcePath.av, ['raptor-media']);
-  // gulp.watch(sourcePath.base, gulp.registry().get('raptor-base'))
-  gulp.watch(sourcePath.base, ['raptor-base']);
+  // gulp.watch(sourcePath.root, gulp.registry().get('raptor-root'))
+  gulp.watch(sourcePath.root, ['raptor-root']);
 });
 
-// gulp.task('build', gulp.parallel('raptor-styles', 'raptor-scripts', 'raptor-glyphs', 'raptor-images', 'raptor-media', 'raptor-base');
-gulp.task('build', ['raptor-styles', 'raptor-scripts', 'raptor-glyphs', 'raptor-images', 'raptor-media', 'raptor-base']);
+// gulp.task('build', gulp.parallel('raptor-styles', 'raptor-scripts', 'raptor-glyphs', 'raptor-images', 'raptor-media', 'raptor-root');
+gulp.task('build', ['raptor-styles', 'raptor-scripts', 'raptor-glyphs', 'raptor-images', 'raptor-media', 'raptor-root']);
 
 // gulp.task('default', gulp.series('build', 'watch'));
 gulp.task('default', ['build', 'watch']);

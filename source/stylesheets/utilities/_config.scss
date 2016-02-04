@@ -20,15 +20,22 @@ $font-stack-consolas: ('Consolas', 'Courier New', 'Bitstream Vera Sans Mono', 'M
 //== Descriptive Color Assignments ===========================================/
 
 /// Standard colors
-$black: #000000;
-$red: #FF0000;
-$blue: #0000FF;
+$black: rgb(0, 0, 0);
+$h-black: #000000;
+$red: rgb(255, 0, 0);
+$h-red: #FF0000;
+$blue: rgb(0, 0, 255);
+$h-blue: #0000FF;
 
 /// Variant and custom colors
-$gallery: #EFEFEF;
-$cod-gray: #0B0B0B;
-$java: #1FC2C2;
-$pacific-blue: #009DC4;
+$gallery: rgb(239, 239, 239);
+$h-gallery: #EFEFEF;
+$cod-gray: rgb(11, 11, 11);
+$h-cod-gray: #0B0B0B;
+$java: rgb(31, 194, 194);
+$h-java: #1FC2C2;
+$pacific-blue: rgb(0, 157, 196);
+$h-pacific-blue: #009DC4;
 
 //== Reusable Variables ======================================================/
 
