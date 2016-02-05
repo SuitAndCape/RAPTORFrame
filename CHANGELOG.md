@@ -3,6 +3,15 @@
 RAPTORFrame Changelog
 ===============================================================================
 
+## 1.0.2
+
+- Add [eslint](https://github.com/eslint/eslint) and corresponding packages, for JavaScript linting
+- Add `npm run lint-js` command for linting all `source/javascripts/` files
+(except for `vendors/`)
+- Create an `.eslintignore` file, so that JavaScript linting will only focus on development files
+- Add [gulp-imagemin](https://github.com/sindresorhus/gulp-imagemin) for image optimization
+- Create the `source/javascripts/modules/` directory
+
 ## 1.0.1
 
 - Generated `frame/` directory becomes new project root
