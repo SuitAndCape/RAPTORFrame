@@ -3,7 +3,7 @@
 ////= RAPTORFrame Gulp Tasks
 //===========================================================================//
 
-/// RAPTORFrame v1.0.1
+/// RAPTORFrame v1.0.2
   /// SOURCE: https://github.com/SuitAndCape/RAPTORFrame
   /// Authored by Ali Esmaili
   /// Copyright (c) 2015-2016 Ali Esmaili | SuitAndCape
@@ -15,12 +15,13 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     minifyCSS = require('gulp-cssnano'),
-    path = require('path'),
+    imagemin = require('gulp-imagemin');
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sassGlob = require('gulp-sass-glob'),
     sourcemaps = require('gulp-sourcemaps'),
-    uglifyJS = require('gulp-uglify');
+    uglifyJS = require('gulp-uglify'),
+    path = require('path');
 
 var framePath = {
       'stylesheets': './frame/stylesheets',
@@ -36,6 +37,7 @@ var framePath = {
       'jsvend': './source/javascripts/vendors/**/*.js',
       'jspoly': './source/javascripts/polyfills/**/*.js',
       'jsplug': './source/javascripts/plugins/**/*.js',
+      'jsmods': './source/javascripts/modules/**/*.js',
       'jsmain': './source/javascripts/*.js',
       'jshelp': './source/javascripts/helpers/**/*.js',
       'js': './source/javascripts/**/*.js',
@@ -44,6 +46,7 @@ var framePath = {
     //     './source/javascripts/vendors/**/*.js',
     //     './source/javascripts/plugins/**/*.js',
     //     './source/javascripts/helpers/**/*.js',
+    //     './source/javascripts/modules/**/*.js',
     //     './source/javascripts/views/**/*.js',
     //     './source/javascripts/*.js',
     //   ],
@@ -92,6 +95,7 @@ gulp.task('raptor-scripts', function() {
       sourcePath.jsplug,
       sourcePath.jshelp,
       sourcePath.jsview,
+      sourcePath.jsmods,
       sourcePath.jsmain,
     ])
     .pipe(sourcemaps.init())
@@ -114,6 +118,11 @@ gulp.task('raptor-glyphs', function () {
 gulp.task('raptor-images', function() {
   return gulp
     .src(sourcePath.img)
+      .pipe(imagemin({
+        optimizationLevel: 3,
+        progessive: true,
+        interlaced: true
+      }))
     .pipe(gulp.dest(framePath.images));
 });
 
