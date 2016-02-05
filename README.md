@@ -8,7 +8,6 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 
 ## Contents
 
-- [Title](#raptorframe)
 - [Usage](#usage)
 - [Riding the Raptor](#riding-the-raptor)
 - [ToDos](#todos)
@@ -26,20 +25,8 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 
 ### Installation
 1. Create a new project directory
-2. Place the `assets/` and `source/` directories, and the `gulpfile.js` and `package.json` files from the `RAPTORFrame/` directory, into the root directory of your project
-3. Optionally, repeat the previous step with the other files found in the `RAPTORFrame/` directory (`index.html`, `.gitignore`, `.editorconfig`, `rapticon-16x16.png`, etc.) [_do not_ transfer the `.git/` directory]
-4. Within the project root directory, run `npm install` to setup the development environment
-5. Link your base file (eg. `index.html`) to the `raptor.css` stylesheet, and to the `raptor.js` JavaScript file, found in the `assets/` directory
-
-``` html
-<!-- STYLESHEET EXAMPLE -->
-<link rel="stylesheet" type="text/css" href="assets/stylesheets/raptor.css" />
-```
-
-``` html
-<!-- JAVASCRIPT EXAMPLE -->
-<script type="text/javascript" src="assets/javascripts/raptor.js"></script>
-```
+2. Place the `source/` directory, `gulpfile.js`, `package.json`, and `.eslintignore` (which is hidden) files from the `RAPTORFrame/` directory, into the root directory of your project (_DO NOT_ transfer the hidden `.git/` directory)
+3. Within the project root directory, run `npm install` to setup the development environment
 
 ### Commands
 |          Command          |            Task            |
@@ -52,6 +39,7 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 | `npm run raptor -- glyph` | `build` additional _glyphs_ (_fonts_ and _icons_) |
 | `npm run raptor -- audvi` | `build` the _images_ and the _media_ (_favicons_, _images_, _audio_, and _video_) |
 |     `npm run launch`      | Starts a local server and opens the base file in a browser |
+|     `npm run lint-js`     | Lints the development _JavaScripts_ with `eslint` |
 
 ## ToDos
 
@@ -86,28 +74,24 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
   + `source/views/` directory
     * Transfer made to `frame/`
     * Subfolders will transfer, for modularity
-
 - Add the following...
   + Linters 
     * `scss-lint`
-    * `csslint`
-    * `jshint` or `eslint`
+    * `csslint` (_maybe..._)
     * Some for views
     * Some for markup languages (_maybe..._)
 - Create the following...
-  + Root files
-    * New `rapticon-16x16.ico` and new `rapticon-16x16.png`
-    * `apple-touch-icon.jpg` or `apple-touch-icon.png`
+  + View files
     * `404.html` (_maybe..._)
     * `422.html` (_maybe..._)
     * `500.html` (_maybe..._)
-    * `.jshintignore`
-    * `.eslintignore`
   + SCSS files
     * A `@font-face` mixin for glyphs (_maybe..._)
   + Images
     * RAPTORFrame logo – `.png` and/or `svg`
     * RAPTORFrame `og:image` – `.jpg` or `.png`
+    * New `rapticon-16x16.ico` and new `rapticon-16x16.png`
+    * `apple-touch-icon.jpg` or `apple-touch-icon.png`
   + Lib directories
     * CSS libraries, non-compiled (_maybe..._)
     * JavaScript libraries, non-compiled (_maybe..._)
