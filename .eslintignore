@@ -1,8 +1,9 @@
 # .eslintignore
 
-####= RAPTORFrame .eslintignore File List
+####= RAPTORFrame eslintignore File List
 ##===========================================================================##
 
-## How to use .eslintignore: http://eslint.org/docs/user-guide/configuring.html#ignoring-files-and-directories
+## How to use eslintignore: http://eslint.org/docs/user-guide/configuring.html#ignoring-files-and-directories
+
 frame/
 source/javascripts/vendors/

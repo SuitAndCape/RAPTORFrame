@@ -3,7 +3,7 @@
 ////= RAPTORFrame Gulp Tasks
 //===========================================================================//
 
-/// RAPTORFrame v1.0.2
+/// RAPTORFrame v1.0.3
   /// SOURCE: https://github.com/SuitAndCape/RAPTORFrame
   /// Authored by Ali Esmaili
   /// Copyright (c) 2015-2016 Ali Esmaili | SuitAndCape
@@ -31,8 +31,16 @@ var framePath = {
       'glyphs': './frame/glyphs',
       'frame': './frame',
     },
+    rootPath = './',
     sourcePath = {
       'scss': './source/stylesheets/**/*.scss',
+      'root': [
+        './source/root/**/*',
+        './source/root/**/.editorconfig',
+        './source/root/**/.gitignore',
+        './source/root/**/.jshintignore',
+        './source/root/**/.eslintignore',
+      ],
       'jsview': './source/javascripts/views/**/*.js',
       'jsvend': './source/javascripts/vendors/**/*.js',
       'jspoly': './source/javascripts/polyfills/**/*.js',
@@ -51,15 +59,8 @@ var framePath = {
     //     './source/javascripts/*.js',
     //   ],
       'img': './source/images/**/*.{gif,ico,jpeg,jpg,png,svg,tif,tiff}',
-      'fi': './source/glyphs/**/*.{eot,svg,ttf,woff,woff2}',
-      'root': [
-        './source/root/**/*',
-        './source/root/**/.editorconfig',
-        './source/root/**/.gitignore',
-        './source/root/**/.jshintignore',
-        './source/root/**/.eslintignore',
-      ],
-      'av': './source/media/**/*.{aac,avi,m4a,mid,mov,mp3,mp4,ogg,ogv,swf,vtt,wav,webm,wma,wmv}',
+      'hiero': './source/glyphs/**/*.{eot,svg,ttf,woff,woff2}',
+      'assets': './source/assets/**/*',
     };
 
 //== Functions ===============================================================/
@@ -73,7 +74,13 @@ function handleError(error) {
 
 //== Frame Tasks =============================================================/
 
-gulp.task('raptor-styles', function() {
+gulp.task('raptor-root', function () {
+  return gulp
+    .src(sourcePath.root)
+    .pipe(gulp.dest(rootPath));
+});
+
+gulp.task('raptor-stylesheets', function() {
   return gulp
     .src(sourcePath.scss)
     .pipe(sourcemaps.init())
@@ -86,7 +93,7 @@ gulp.task('raptor-styles', function() {
     .pipe(gulp.dest(framePath.stylesheets));
 });
 
-gulp.task('raptor-scripts', function() {
+gulp.task('raptor-javascripts', function() {
   return gulp
     // .src(sourcePath.jsmanifest)
     .src([
@@ -108,7 +115,7 @@ gulp.task('raptor-scripts', function() {
 
 gulp.task('raptor-glyphs', function () {
   return gulp
-    .src(sourcePath.fi)
+    .src(sourcePath.hiero)
     .pipe(gulp.dest(function(file) {
       file.path = file.base + path.basename(file.path);
       return framePath.glyphs;
@@ -126,47 +133,42 @@ gulp.task('raptor-images', function() {
     .pipe(gulp.dest(framePath.images));
 });
 
-gulp.task('raptor-media', function() {
+gulp.task('raptor-assets', function () {
   return gulp
-    .src(sourcePath.av)
-    .pipe(gulp.dest(framePath.media));
-});
-
-gulp.task('raptor-root', function () {
-  return gulp
-    .src(sourcePath.root)
+    .src(sourcePath.assets)
     .pipe(gulp.dest(framePath.frame));
 });
 
 //== Management Tasks ========================================================/
 
-// gulp.task('audvi', gulp.parallel('raptor-images', 'raptor-media');
-gulp.task('audvi', ['raptor-images', 'raptor-media']);
+gulp.task('other', ['raptor-assets']);
+
+gulp.task('image', ['raptor-images']);
 
 gulp.task('glyph', ['raptor-glyphs']);
 
-// gulp.task('smash', gulp.parallel('raptor-styles', 'raptor-scripts');
-gulp.task('smash', ['raptor-styles', 'raptor-scripts']);
+// gulp.task('smash', gulp.parallel('raptor-stylesheets', 'raptor-javascripts');
+gulp.task('smash', ['raptor-stylesheets', 'raptor-javascripts']);
 
-gulp.task('init', ['raptor-root']);
+gulp.task('floor', ['raptor-root']);
 
 gulp.task('watch', function() {
-  // gulp.watch(sourcePath.scss, gulp.registry().get('raptor-styles'))
-  gulp.watch(sourcePath.scss, ['raptor-styles']);
-  // gulp.watch(sourcePath.js, gulp.registry().get('raptor-scripts'))
-  gulp.watch(sourcePath.js, ['raptor-scripts']);
-  // gulp.watch(sourcePath.fi, gulp.registry().get('raptor-glyphs'))
-  gulp.watch(sourcePath.fi, ['raptor-glyphs']);
-  // gulp.watch(sourcePath.img, gulp.registry().get('raptor-images'))
-  gulp.watch(sourcePath.img, ['raptor-images']);
-  // gulp.watch(sourcePath.av, gulp.registry().get('raptor-media'))
-  gulp.watch(sourcePath.av, ['raptor-media']);
   // gulp.watch(sourcePath.root, gulp.registry().get('raptor-root'))
   gulp.watch(sourcePath.root, ['raptor-root']);
+  // gulp.watch(sourcePath.scss, gulp.registry().get('raptor-stylesheets'))
+  gulp.watch(sourcePath.scss, ['raptor-stylesheets']);
+  // gulp.watch(sourcePath.js, gulp.registry().get('raptor-javascripts'))
+  gulp.watch(sourcePath.js, ['raptor-javascripts']);
+  // gulp.watch(sourcePath.hiero, gulp.registry().get('raptor-glyphs'))
+  gulp.watch(sourcePath.hiero, ['raptor-glyphs']);
+  // gulp.watch(sourcePath.img, gulp.registry().get('raptor-images'))
+  gulp.watch(sourcePath.img, ['raptor-images']);
+  // gulp.watch(sourcePath.assets, gulp.registry().get('raptor-assets'))
+  gulp.watch(sourcePath.assets, ['raptor-assets']);
 });
 
-// gulp.task('build', gulp.parallel('raptor-styles', 'raptor-scripts', 'raptor-glyphs', 'raptor-images', 'raptor-media', 'raptor-root');
-gulp.task('build', ['raptor-styles', 'raptor-scripts', 'raptor-glyphs', 'raptor-images', 'raptor-media', 'raptor-root']);
+// gulp.task('build', gulp.parallel('raptor-stylesheets', 'raptor-javascripts', 'raptor-glyphs', 'raptor-images', 'raptor-root', 'raptor-assets');
+gulp.task('build', ['raptor-stylesheets', 'raptor-javascripts', 'raptor-glyphs', 'raptor-images', 'raptor-root', 'raptor-assets']);
 
 // gulp.task('default', gulp.series('build', 'watch'));
 gulp.task('default', ['build', 'watch']);

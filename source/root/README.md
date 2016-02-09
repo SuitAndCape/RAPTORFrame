@@ -25,21 +25,23 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 
 ### Installation
 1. Create a new project directory
-2. Place the `source/` directory, `gulpfile.js`, `package.json`, and `.eslintignore` (which is hidden) files from the `RAPTORFrame/` directory, into the root directory of your project (_DO NOT_ transfer the hidden `.git/` directory)
-3. Within the project root directory, run `npm install` to setup the development environment
+2. Move the `source/` directory, along with the `gulpfile.js` and `package.json` files from the `RAPTORFrame/` directory, into the root directory of your project (_DO NOT_ transfer the hidden `.git/` directory)
+3. _Optionally_, repeat the last step with the `.eslintignore` hidden file (the custom scripts should make this unnecessary though)
+4. Within the project root directory, run `npm install` to setup the development environment
 
 ### Commands
 |          Command          |            Task            |
 |---------------------------|----------------------------|
-|      `npm run raptor`     | `build` the entire _frame_, `watch` all of the _source_ files |
-| `npm run raptor -- build` | `build` the entire _frame_ |
-| `npm run raptor -- watch` | `watch` all of the _source_ files |
-| `npm run raptor -- init` | `build` the _root_ files (`index.html`, `README.md`, `humans.txt`, `robots.txt`, `LICENSE`, `.editorconfig`, and `.gitconfig`) to the _root_ |
-| `npm run raptor -- smash` | `build` the _stylesheets_ and _JavaScripts_ |
-| `npm run raptor -- glyph` | `build` additional _glyphs_ (_fonts_ and _icons_) |
-| `npm run raptor -- audvi` | `build` the _images_ and the _media_ (_favicons_, _images_, _audio_, and _video_) |
+|      `npm run raptor`     | **build** the entire _frame_ and _root_, **watch** all of the _source_ files |
+| `npm run raptor -- build` | **build** the entire _frame_ and _root_ |
+| `npm run raptor -- watch` | **watch** all of the _source_ files |
+| `npm run raptor -- floor` | **build** the _root_ files to the project root |
+| `npm run raptor -- smash` | **build** the _stylesheets_ and _javascripts_ |
+| `npm run raptor -- glyph` | **build** additional _glyphs_ (`eot`, `svg`, `ttf`, `woff`, and `woff2` files) |
+| `npm run raptor -- image` | **build** and **optimize** the _images_ (`gif`, `ico`, `jpeg`, `jpg`, `png`, `svg`, `tif`, and `tiff` files) |
+| `npm run raptor -- other` | **build** the _assets_ files |
 |     `npm run launch`      | Starts a local server and opens the base file in a browser |
-|     `npm run lint-js`     | Lints the development _JavaScripts_ with `eslint` |
+|     `npm run lint-js`     | Lints the _source_ _javascripts_ with `eslint` |
 
 ## ToDos
 
@@ -108,7 +110,7 @@ The Sass (SCSS) boilerplate, also known as [RAPTORSMACSS](https://github.com/Sui
 
 ## License
 
-This [project](#raptorframe) is copyright © 2015 Ali Esmaili | SuitAndCape.  It is free software that may be redistributed under the terms specified in the [LICENSE](https://github.com/SuitAndCape/RAPTORFrame/blob/Info/LICENSE).
+This [project](#raptorframe) is copyright © 2015-2016 Ali Esmaili | SuitAndCape.  It is free software that may be redistributed under the terms specified in the [LICENSE](https://github.com/SuitAndCape/RAPTORFrame/blob/Info/LICENSE).
 
 This is based on [The MIT License (MIT)](http://opensource.org/licenses/MIT).  For more information, visit the [Open Source Initiative](http://opensource.org/) website.
 
@@ -118,6 +120,6 @@ This is based on [The MIT License (MIT)](http://opensource.org/licenses/MIT).  F
 | ------------------------------------ | ------------------------------------ |
 **_SuitAndCape GitHub_** | https://github.com/SuitAndCape
 **_Personal GitHub_**    | https://github.com/AESM
-**_Website_**            | https://SuitAndCape.github.io/
+**_Website_**            | http://SuitAndCape.github.io/
 **_LinkedIn_**           | https://www.linkedin.com/in/SuitAndCape
 **_Twitter_**            | https://twitter.com/SuitAndCape
