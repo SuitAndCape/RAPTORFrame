@@ -1,6 +1,6 @@
 # humanstxt.org
 
-####= Humans Text File
+####= SuitAndCape Humans Text File
 ##===========================================================================##
 
 ## The humans responsible & technology colophon
@@ -36,8 +36,8 @@
 
 ##== Info ====================================================================#
 
-  Last update: 2016/02/04
+  Last update: 2016/02/09
   Languages: JavaScript, CSS3, HTML5
   Components: Sass (SCSS), Gulp.js, jshint, eslint, scss-lint, tidy-html5,
-    RAPTORSMACSS
+    RAPTORSMACSS, imagemin
   Development tools: Sublime Text 3, iTerm2, NPM, SublimeLinter, Google Chrome

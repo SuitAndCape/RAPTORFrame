@@ -3,6 +3,11 @@
 RAPTORFrame Changelog
 ===============================================================================
 
+## 1.0.3
+
+- Add `source/assets/` directory
+- Have `source/root/` build to the project root
+
 ## 1.0.2
 
 - Add [eslint](https://github.com/eslint/eslint) and corresponding packages, for JavaScript linting
