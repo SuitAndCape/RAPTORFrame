@@ -1,7 +1,7 @@
 // gulpfile.js
 
 ////= RAPTORFrame Gulp Tasks
-//===========================================================================//
+//============================================================================//
 
 /// RAPTORFrame v1.0.3
   /// SOURCE: https://github.com/SuitAndCape/RAPTORFrame
@@ -63,7 +63,7 @@ var framePath = {
       'assets': './source/assets/**/*',
     };
 
-//== Functions ===============================================================/
+//== Functions ================================================================/
 
 /// Errors are reported in terminal and `watch` isn't broken by them
 /// SOURCE: http://stackoverflow.com/a/23973536
@@ -72,7 +72,7 @@ function handleError(error) {
   this.emit('end');
 }
 
-//== Frame Tasks =============================================================/
+//== Frame Tasks ==============================================================/
 
 gulp.task('raptor-root', function () {
   return gulp
@@ -139,7 +139,7 @@ gulp.task('raptor-assets', function () {
     .pipe(gulp.dest(framePath.frame));
 });
 
-//== Management Tasks ========================================================/
+//== Management Tasks =========================================================/
 
 gulp.task('other', ['raptor-assets']);
 

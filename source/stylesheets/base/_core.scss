@@ -7,7 +7,7 @@
 /// *2* – Make all elements from the DOM inherit from the root box-sizing
 
 html {
-  // box-sizing: border-box;     /// *1* ///
+  // box-sizing: border-box;      /// *1* ///
   font-family: sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -16,11 +16,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-// *,     /// *2* ///
-// *::before,     /// *2* ///
-// *::after {     /// *2* ///
-//   box-sizing: inherit;     /// *2* ///
-// }     /// *2* ///
+// *,                             /// *2* ///
+// *::before,                     /// *2* ///
+// *::after {                     /// *2* ///
+//   box-sizing: inherit;         /// *2* ///
+// }                              /// *2* ///
 
 body {
   background: $primary-bg-color;
@@ -30,10 +30,15 @@ body {
 }
 
 a,
-button {
-  color: inherit;
+button,
+i {
   -webkit-transition: $primary-duration;
   transition: $primary-duration;
+}
+
+a,
+button {
+  color: inherit;
 }
 
 a {
@@ -111,12 +116,4 @@ sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.225em;
-}
-
-sup {
-  top: -0.45;
 }
